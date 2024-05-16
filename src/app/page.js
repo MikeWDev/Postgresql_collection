@@ -1,23 +1,20 @@
-import Image from "next/image";
+"use client";
 import "../scss/index.scss";
-import elephant from "../../public/elephant.png";
-import { GameController } from "@phosphor-icons/react/dist/ssr";
+
 import NavElement from "@/components/navElement";
+import { useState } from "react";
+import HeroPage from "@/components/HeroPage";
+import PlayGround from "@/components/PlayGround";
 
 export default function Home() {
+  const [animation, setAnimation] = useState("home");
   return (
     <div className="container home">
-      <Image src={elephant} height={500} width={500} />
-      <h1>THE</h1>
-
-      <h1>Postgresql</h1>
-      <span></span>
-      <h1>app collection</h1>
-      <div className="elipse" />
-      <div className="elipse" />
+      <HeroPage animation={animation} />
+      <PlayGround animation={animation} />
       <div className="bar">
         <div className="nav-con">
-          <NavElement />
+          <NavElement setAnimation={setAnimation} animation={animation} />
         </div>
       </div>
     </div>

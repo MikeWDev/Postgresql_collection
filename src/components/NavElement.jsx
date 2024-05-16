@@ -1,12 +1,23 @@
 import { HouseSimple, Joystick } from "@phosphor-icons/react/dist/ssr";
 import React from "react";
 
-const NavElement = () => {
+const NavElement = ({ setAnimation, animation }) => {
   return (
     <>
       <nav className="nav-container">
-        <HouseSimple />
-        <Joystick />
+        <div className="nav-anchor">
+          <div className={`span ${animation}`}></div>
+          <HouseSimple
+            onClick={() => {
+              setAnimation("home");
+            }}
+          />
+          <Joystick
+            onClick={() => {
+              setAnimation("pg");
+            }}
+          />
+        </div>
       </nav>
     </>
   );

@@ -3,7 +3,7 @@
 .nav-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 40px;
   padding: 20px 15px;
   width: fit-content;
   position: absolute;
@@ -11,17 +11,30 @@
   transform: translate(0%, -50%);
   top: 50%;
   @include g.glassEffect();
+  .nav-anchor {
+    position: relative;
+    .span {
+      background-color: g.$primary;
+      width: 50px;
+      z-index: -1;
+      height: 50px;
+      border-radius: 18px;
+      position: absolute;
+      top: -31%;
+      left: 49%;
+      transform: translate(-50%, 50%);
+      transition: 1s all ease-in-out;
+    }
+    .pg {
+      transition: 1s all ease-in-out;
+      top: 18%;
+    }
+  }
   svg {
     font-size: 42px;
     color: g.$fontColor;
     border-radius: 8px;
     transition: 300ms all ease-in-out;
     cursor: pointer;
-    &:hover {
-      background-color: g.$primary;
-    }
-    &.active {
-      background-color: g.$primary;
-    }
   }
 }
