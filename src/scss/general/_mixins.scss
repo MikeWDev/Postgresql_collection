@@ -1,0 +1,17 @@
+@use "../general/variables" as g;
+
+@mixin glassEffect() {
+  background: rgba(0, 0, 0, 0.381);
+  border-radius: 0 16px 16px 0px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+@mixin elipse() {
+  height: 500px;
+  width: 500px;
+  background-color: g.$primary;
+  border-radius: 50%;
+  filter: blur(170px);
+  position: absolute;
+}

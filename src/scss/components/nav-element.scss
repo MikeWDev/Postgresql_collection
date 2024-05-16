@@ -1,0 +1,27 @@
+@use "../general/" as g;
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 15px;
+  width: fit-content;
+  position: absolute;
+  left: 100%;
+  transform: translate(0%, -50%);
+  top: 50%;
+  @include g.glassEffect();
+  svg {
+    font-size: 42px;
+    color: g.$fontColor;
+    border-radius: 8px;
+    transition: 300ms all ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: g.$primary;
+    }
+    &.active {
+      background-color: g.$primary;
+    }
+  }
+}
