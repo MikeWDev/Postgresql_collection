@@ -1,0 +1,124 @@
+.capital-quiz-con {
+  background-image: url(./background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  width: 80%;
+  height: 590px;
+  border-radius: 18px;
+  position: absolute;
+  right: 7%;
+  top: 10%;
+  transition: 1s all ease-in-out;
+  &.active {
+    right: -100%;
+  }
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 40%;
+  height: 300px;
+  margin: 15% auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.total-score {
+  margin: 0;
+}
+
+.answer-container {
+  width: 100%;
+  text-align: center;
+}
+
+.answer-input {
+  text-align: center;
+  width: 70%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.answer-btn {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: large;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffca00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &.green {
+    background-color: green;
+  }
+}
+
+.horizontal-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.answer-btn:hover {
+  background-color: #ffd500;
+}
+
+#result {
+  text-align: center;
+  font-size: 24px;
+}
+
+.checkmark {
+  color: transparent;
+  animation: checkmark 0.5s ease;
+}
+
+.cross {
+  color: transparent;
+  animation: cross 0.5s ease;
+}
+
+@keyframes checkmark {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: green;
+  }
+}
+
+@keyframes cross {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.restart-button {
+  display: inline-block;
+  background-color: #fff;
+  color: #333;
+  padding: 15px 30px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}

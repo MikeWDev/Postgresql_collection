@@ -20,9 +20,9 @@ const HeroPage = ({ animation }) => {
       <h1 className={`${animation && animation !== "home" ? "active" : ""}`}>
         Postgresql
       </h1>
-      <span
-        className={`${animation && animation !== "home" ? "active" : ""}`}
-      ></span>
+      <div
+        className={` box${animation && animation !== "home" ? "active" : ""}`}
+      ></div>
       <h1 className={`${animation && animation !== "home" ? "active" : ""}`}>
         app collection
       </h1>

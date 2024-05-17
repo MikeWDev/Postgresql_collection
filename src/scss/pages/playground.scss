@@ -13,9 +13,14 @@ section {
     border-radius: 50px;
     position: absolute;
     transition: all 1s ease-in-out;
+    left: 10%;
     bottom: 5%;
     &.active {
       bottom: -100%;
+    }
+    &.active-left {
+      transition: all 1s ease-in-out;
+      left: -100%;
     }
     h1 {
       position: absolute;
@@ -40,6 +45,13 @@ section {
       column-gap: 60px;
       row-gap: -5px;
       .game {
+        img {
+          border: 10px solid #000;
+          border-radius: 18px;
+          &:hover {
+            border: 10px solid g.$primary;
+          }
+        }
         h2 {
           font-size: 42px;
           color: g.$fontColor;

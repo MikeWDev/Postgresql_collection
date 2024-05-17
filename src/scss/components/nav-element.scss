@@ -25,8 +25,14 @@
       transform: translate(-50%, 50%);
       transition: 1s all ease-in-out;
     }
+    .home {
+      top: -31%;
+    }
     .pg {
       transition: 1s all ease-in-out;
+      top: 18%;
+    }
+    .g1 {
       top: 18%;
     }
   }
