@@ -1,23 +1,32 @@
-// import "dotenv/config";
-// import { getCapitals } from "./data";
-// import { db } from "./utils";
+import "dotenv/config";
+import { getCapitals } from "./data";
 
-// let currentQuestion;
+let currentQuestion;
 
-// export const submitAnswer = async (formData) => {
-//   const { answer } = Object.fromEntries(formData);
-//   const quiz = getCapitals();
-//   let isCorrect = false;
-//   nextQuestion();
-//   if (currentQuestion.capital.toLowerCase() === answer.toLowerCase()) {
-//     isCorrect = true;
-//   }
-//   return isCorrect;
-// };
+export const submitAnswer = async (prevValue, formData) => {
+  const { answer } = Object.fromEntries(formData);
 
-// export async function nextQuestion() {
-//   const quiz = getCapitals();
-//   const randomCountry = quiz[Math.floor(Math.random() * quiz.length)];
-//   currentQuestion = randomCountry;
-//   return currentQuestion;
-// }
+  if (currentQuestion === undefined) {
+    currentQuestion = await nextQuestion();
+    console.log(currentQuestion);
+    return currentQuestion;
+  }
+
+  console.log(currentQuestion);
+  if (currentQuestion.capital.toLowerCase() === answer.toLowerCase()) {
+    currentQuestion = await nextQuestion();
+    return { succes: true, currentQuestion };
+  } else {
+    currentQuestion = await nextQuestion();
+    return { succes: false, currentQuestion };
+  }
+};
+
+export async function nextQuestion() {
+  const quiz = await getCapitals();
+  const randomCountry = quiz[Math.floor(Math.random() * quiz.length)];
+
+  currentQuestion = randomCountry;
+  console.log(currentQuestion);
+  return currentQuestion;
+}

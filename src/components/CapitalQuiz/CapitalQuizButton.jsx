@@ -3,8 +3,8 @@ const CapitalQuizButton = ({ initValue, setInitValue }) => {
     <>
       {initValue && initValue === "Start" ? (
         <button
-          type="button"
-          onClick={() => {
+          type="submit"
+          onClick={(e) => {
             setInitValue("");
           }}
           className="answer-btn green"
@@ -12,12 +12,12 @@ const CapitalQuizButton = ({ initValue, setInitValue }) => {
           {initValue}
         </button>
       ) : (
-        <button className="answer-btn" type="submit">
+        <button
+          className="answer-btn"
+          // onClick={(e) => e.preventDefault()}
+          type="submit"
+        >
           SUBMIT
-          <span class="checkmark">✔</span>
-          <span class="cross" id="error">
-            ✖
-          </span>
         </button>
       )}
     </>

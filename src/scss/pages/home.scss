@@ -23,7 +23,9 @@
     top: 68%;
     right: 15%;
     transition: all 1s ease-in-out;
+    z-index: 99;
     &.active {
+      transition: all 1s ease-in-out;
       top: -100%;
     }
   }
@@ -33,8 +35,7 @@
     bottom: 23%;
     transition: all 1s ease-in-out;
     &.active {
-      transition: all 1s ease-in-out;
-      top: -100%;
+      top: 100%;
     }
   }
 

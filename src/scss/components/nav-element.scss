@@ -2,6 +2,7 @@
 
 .nav-container {
   display: flex;
+  height: 135px;
   flex-direction: column;
   gap: 40px;
   padding: 20px 15px;
@@ -10,7 +11,12 @@
   left: 100%;
   transform: translate(0%, -50%);
   top: 50%;
+  transition: 1s all ease-in-out;
   @include g.glassEffect();
+  &.g {
+    transition: 1s all ease-in-out;
+    height: 170px;
+  }
   .nav-anchor {
     position: relative;
     .span {
@@ -34,6 +40,19 @@
     }
     .g1 {
       top: 18%;
+    }
+    .g {
+      top: 69%;
+    }
+    .back-arrow {
+      transition: 300ms all ease-in-out;
+      position: absolute;
+      top: 100%;
+      left: 0px;
+      opacity: 0;
+      &.g {
+        opacity: 1;
+      }
     }
   }
   svg {

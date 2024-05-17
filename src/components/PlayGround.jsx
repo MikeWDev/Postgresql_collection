@@ -8,7 +8,7 @@ const PlayGround = ({ animation, setAnimation }) => {
         className={` pg-container ${
           animation && animation === "pg"
             ? ""
-            : animation === "g1"
+            : animation === "g1 g"
             ? "active-left"
             : "active"
         }`}
@@ -20,7 +20,7 @@ const PlayGround = ({ animation, setAnimation }) => {
           <div className="game">
             <h2>Capital quiz</h2>
             <Image
-              onClick={() => setAnimation("g1")}
+              onClick={() => setAnimation("g1 g")}
               src={capitalQuiz}
               height={200}
             />
