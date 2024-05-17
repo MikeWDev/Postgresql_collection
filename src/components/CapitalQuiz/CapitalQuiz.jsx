@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CapitalQuizButton from "./capitalQuizButton";
+import CapitalQuizButton from "./CapitalQuizButton";
 
 const CapitalQuiz = ({ animation, setAnimation }) => {
   const [initValue, setInitValue] = useState("Start");
