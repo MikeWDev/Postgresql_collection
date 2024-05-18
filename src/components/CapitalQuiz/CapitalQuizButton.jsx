@@ -3,6 +3,7 @@ const CapitalQuizButton = ({ initValue, setInitValue }) => {
     <>
       {initValue && initValue === "Start" ? (
         <button
+          form="capitalForm"
           type="submit"
           onClick={(e) => {
             setInitValue("");
@@ -12,11 +13,7 @@ const CapitalQuizButton = ({ initValue, setInitValue }) => {
           {initValue}
         </button>
       ) : (
-        <button
-          className="answer-btn"
-          // onClick={(e) => e.preventDefault()}
-          type="submit"
-        >
+        <button className="answer-btn" form="capitalForm" type="submit">
           SUBMIT
         </button>
       )}

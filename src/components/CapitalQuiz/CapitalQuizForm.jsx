@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import CapitalQuizButton from "./CapitalQuizButton";
 import { useFormState } from "react-dom";
-import { submitAnswer } from "@/lib/actions";
+import { submitCapitalAnswer } from "@/lib/actions";
 const CapitalQuizForm = ({ initValue, setInitValue }) => {
-  const [state, formAction] = useFormState(submitAnswer, undefined);
+  const [state, formAction] = useFormState(submitCapitalAnswer, undefined);
   const [score, setScore] = useState(0);
   const [shake, setShake] = useState("");
   const formRef = useRef();
@@ -26,6 +26,7 @@ const CapitalQuizForm = ({ initValue, setInitValue }) => {
       ref={formRef}
       className={`quiz-container ${shake}`}
       action={formAction}
+      id="capitalForm"
     >
       <div className="horizontal-container">
         <h3 className="total-score">
