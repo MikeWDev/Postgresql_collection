@@ -35,3 +35,28 @@ export const getCapitalByFlag = async (name) => {
     throw new Error("Failed to find capital");
   }
 };
+
+const getUsers = async () => {
+  try {
+    const users = await sql`SELECT * FROM family_users`;
+    const res = users.rows;
+    return res;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch family users");
+  }
+};
+
+export const createUser = async (prevValue, formData) => {
+  const { name, color } = Object.fromEntries(formData);
+
+  try {
+    await sql`INSERT INTO family_users (name , color) VALUES (${name} , ${color}) `;
+    console.log("User added");
+    return { succes: "User added succesfully!" };
+  } catch (error) {
+    console.log(error);
+
+    return { error: "User not added, something went wrong" };
+  }
+};

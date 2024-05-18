@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import capitalQuiz from "/public/capital_quiz.png";
 import flagQuiz from "/public/flag_quiz.png";
+import familyTracker from "/public/family-tracker.png";
 const PlayGround = ({ animation, setAnimation }) => {
   return (
     <section>
@@ -13,6 +14,8 @@ const PlayGround = ({ animation, setAnimation }) => {
             ? "active-left"
             : animation === "g2 g"
             ? "active-right"
+            : animation === "g3 g"
+            ? "active-top"
             : animation === "home"
             ? "active"
             : ""
@@ -42,10 +45,16 @@ const PlayGround = ({ animation, setAnimation }) => {
               width={350}
             />
           </div>
-          {/* <div className="game">
-            <h2>Title</h2>
-            <Image src={fm} height={200} />
-          </div> */}
+          <div className="game">
+            <h2>Family Tracker</h2>
+            <Image
+              alt="Image of family travel tracker app"
+              onClick={() => setAnimation("g3 g")}
+              src={familyTracker}
+              height={200}
+              width={350}
+            />
+          </div>
         </div>
       </div>
     </section>

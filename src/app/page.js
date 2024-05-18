@@ -6,6 +6,7 @@ import PlayGround from "@/components/PlayGround";
 import CapitalQuiz from "@/components/CapitalQuiz/CapitalQuiz";
 import NavElement from "@/components/NavElement";
 import FlagQuiz from "@/components/FLagQuiz/FlagQuiz";
+import FamilyTracker from "@/components/FamilyTracker/FamilyTracker";
 
 export default function Home() {
   const [animation, setAnimation] = useState("home");
@@ -16,6 +17,7 @@ export default function Home() {
       <PlayGround setAnimation={setAnimation} animation={animation} />
       <CapitalQuiz animation={animation} setAnimation={setAnimation} />
       <FlagQuiz animation={animation} />
+      <FamilyTracker animation={animation} />
       <div className="bar">
         <div className="nav-con">
           <NavElement setAnimation={setAnimation} animation={animation} />

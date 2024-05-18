@@ -1,6 +1,7 @@
 "use server";
 import "dotenv/config";
 import { getCapitalByFlag, getCapitals, getFlags } from "./data";
+import { sql } from "@vercel/postgres";
 
 //Capitals quiz
 let currentCapitalQuestion;
@@ -73,3 +74,7 @@ export async function nextFlagQuestion() {
   }
   return { currentFlagQuestion, currentFlagCapital };
 }
+
+// ##################
+// FAMILY TRACKER
+// ##################
