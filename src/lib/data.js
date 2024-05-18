@@ -23,14 +23,15 @@ export const getFlags = async () => {
   }
 };
 
-export const getCapitalByFlag = async (flag) => {
+export const getCapitalByFlag = async (name) => {
   try {
     const CapitalByFlag =
-      await sql`SELECT * FROM capitals WHERE country = ${flag} `;
+      await sql`SELECT capital FROM capitals where country = ${name} `;
     const res = CapitalByFlag.rows[0];
+
     return res;
   } catch (error) {
     console.log(error);
-    throw new Error("Failet to find capital");
+    throw new Error("Failed to find capital");
   }
 };

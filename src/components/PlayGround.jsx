@@ -25,6 +25,7 @@ const PlayGround = ({ animation, setAnimation }) => {
           <div className="game">
             <h2>Flag quiz</h2>
             <Image
+              alt="Image of flag quiz app"
               onClick={() => setAnimation("g2 g")}
               src={flagQuiz}
               height={200}
@@ -34,6 +35,7 @@ const PlayGround = ({ animation, setAnimation }) => {
           <div className="game">
             <h2>Capital quiz</h2>
             <Image
+              alt="Image of capital quiz app"
               onClick={() => setAnimation("g1 g")}
               src={capitalQuiz}
               height={200}

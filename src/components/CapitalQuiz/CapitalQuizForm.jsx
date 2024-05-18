@@ -35,7 +35,9 @@ const CapitalQuizForm = ({ initValue, setInitValue }) => {
         </h3>
       </div>
       <h3 id="countryName">
-        {!state?.country ? state?.currentQuestion.country : state?.country}
+        {!state?.country
+          ? state?.currentCapitalQuestion.country
+          : state?.country}
       </h3>
       <div className="answer-container">
         <input

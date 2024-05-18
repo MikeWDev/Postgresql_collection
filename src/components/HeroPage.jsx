@@ -6,6 +6,8 @@ const HeroPage = ({ animation }) => {
   return (
     <div className="home-container">
       <Image
+        priority={true}
+        alt="Image of cyber elephant"
         className={`${
           animation && animation !== "home" ? "active" : ""
         } elephant`}
