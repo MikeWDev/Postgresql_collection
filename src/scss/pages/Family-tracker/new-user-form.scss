@@ -5,6 +5,10 @@
   left: 35%;
   transform: translate(-35%, -35%);
   transition: 1s ease-in-out all;
+  .member-input {
+    color: black;
+    font-weight: 500;
+  }
   &.true {
     top: 17%;
   }
@@ -105,4 +109,8 @@
   .user-label span.pink {
     background: #e03997;
   }
+}
+.buttons {
+  display: flex;
+  gap: 20px;
 }

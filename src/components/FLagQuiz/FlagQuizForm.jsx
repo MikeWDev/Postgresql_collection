@@ -8,7 +8,6 @@ const FlagQuizForm = () => {
   const [score, setScore] = useState(0);
   const [visible, setVisible] = useState("");
   useEffect(() => {
-    console.log(state);
     if (state?.succes === true) {
       setScore(score + 1);
       setVisible("visible");

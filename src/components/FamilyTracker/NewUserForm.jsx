@@ -1,21 +1,34 @@
 import { createUser } from "@/lib/data";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useFormState } from "react-dom";
-const NewUserForm = ({ dropForm }) => {
+const NewUserForm = ({ dropForm, setDropForm, fetchUsers }) => {
   const [state, formAction] = useFormState(createUser, undefined);
-
+  const formRef = useRef();
   useEffect(() => {
-    console.log(state);
     if (state?.succes === "User added succesfully!") {
+      formRef?.current.reset();
+      setTimeout(() => {
+        setDropForm(false);
+        fetchUsers();
+      }, 1000);
+    } else if (state?.error === "User not added, something went wrong") {
+      formRef?.current.reset();
     }
-  });
+  }, [state]);
 
   return (
     <div className={`new-user-con ${dropForm}`}>
       <h3>Add a Family Member</h3>
-      <form action={formAction}>
+      <form ref={formRef} id="newUserForm" action={formAction}>
         <p>What's your name?</p>
-        <input type="text" name="name" placeholder={`${state?.succes === undefined ? " " : ${}}`} />
+        <input
+          type="text"
+          name="name"
+          className="member-input"
+          placeholder={`${state?.succes === undefined ? " " : state?.succes} ${
+            state?.error === undefined ? " " : state?.error
+          }`}
+        />
 
         <p>Pick a color:</p>
         <input type="radio" name="color" id="red" value="red" />
@@ -68,7 +81,12 @@ const NewUserForm = ({ dropForm }) => {
           <span className="pink"></span>
         </label>
         <div className="spacer"></div>
-        <button type="submit">Add</button>
+        <div className="buttons">
+          <button type="submit">Add</button>
+          <button onClick={() => setDropForm(false)} type="button">
+            Close
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -1,4 +1,3 @@
-import React from "react";
 import FlagQuizForm from "./FlagQuizForm";
 
 const FlagQuiz = ({ animation }) => {
