@@ -14,7 +14,7 @@ section {
     position: absolute;
     transition: all 1s ease-in-out;
     left: 10%;
-    bottom: 5%;
+    bottom: 10%;
 
     &.active {
       bottom: -100%;
@@ -31,7 +31,7 @@ section {
       transition: all 1s ease-in-out;
       bottom: 120%;
     }
-    h1 {
+    .playground {
       position: absolute;
       transform: translate(-50%, -50%);
       top: 0;

@@ -20,7 +20,7 @@ const CapitalQuizForm = ({ initValue, setInitValue }) => {
         setShake("");
       }, 350);
     }
-  }, [state]);
+  }, [state, score]);
   return (
     <form
       ref={formRef}

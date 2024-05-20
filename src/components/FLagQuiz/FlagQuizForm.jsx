@@ -25,7 +25,7 @@ const FlagQuizForm = () => {
         setShake("");
       }, 350);
     }
-  }, [state]);
+  }, [state, score]);
   return (
     <form
       id="flagsForm"

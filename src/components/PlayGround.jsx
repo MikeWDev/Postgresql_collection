@@ -21,7 +21,11 @@ const PlayGround = ({ animation, setAnimation }) => {
             : ""
         }`}
       >
-        <h1 className={animation && animation === "pg" ? "" : "active"}>
+        <h1
+          className={`playground ${
+            animation && animation === "pg" ? "" : "active"
+          }`}
+        >
           PLAYGROUND
         </h1>
         <div className="img-con">

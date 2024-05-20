@@ -63,3 +63,14 @@
     cursor: pointer;
   }
 }
+@media (min-width: 1600px) {
+  .nav-container {
+    left: 0%;
+    border: none;
+    .nav-anchor {
+      .span {
+        border: none;
+      }
+    }
+  }
+}

@@ -14,13 +14,13 @@ const NewUserForm = ({ dropForm, setDropForm, fetchUsers }) => {
     } else if (state?.error === "User not added, something went wrong") {
       formRef?.current.reset();
     }
-  }, [state]);
+  }, [state, dropForm, fetchUsers]);
 
   return (
     <div className={`new-user-con ${dropForm}`}>
       <h3>Add a Family Member</h3>
       <form ref={formRef} id="newUserForm" action={formAction}>
-        <p>What's your name?</p>
+        <p>What is your name?</p>
         <input
           type="text"
           name="name"

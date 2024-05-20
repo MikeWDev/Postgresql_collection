@@ -16,19 +16,19 @@ const FamilyTracker = ({ animation }) => {
     setUsers(users);
   };
 
-  const fetchCountries = async (user_id, color) => {
-    "use client";
-    const visitedCountriesByUser = await fetchCountriesByUser(user_id);
+  // const fetchCountries = async (user_id, color) => {
+  //   "use client";
+  //   const visitedCountriesByUser = await fetchCountriesByUser(user_id);
 
-    console.log(visitedCountriesByUser);
-    visitedCountriesByUser?.map((code) => {
-      if (typeof code.country_code === typeof "RU") {
-      }
-      const canva = (window.onload = document.getElementById(
-        `${code.country_code}`
-      ));
-    });
-  };
+  //   console.log(visitedCountriesByUser);
+  //   visitedCountriesByUser?.map((code) => {
+  //     if (typeof code.country_code === typeof "RU") {
+  //     }
+  //     const canva = (window.onload = document.getElementById(
+  //       `${code.country_code}`
+  //     ));
+  //   });
+  // };
 
   return (
     <>
