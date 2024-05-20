@@ -17,7 +17,7 @@ export default function Home() {
         autoPlay
         loop
         muted
-        src={require("../../public/videoBg.mp4")}
+        src={require("../../public/videoBgSmallChange.mp4")}
       ></video>
       <div className="container home">
         <HeroPage animation={animation} />
